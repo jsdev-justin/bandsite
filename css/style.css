@@ -141,6 +141,10 @@ a:hover{
     height:150px;
 }
 
+.cart-img{
+    height:50px;
+}
+
 .float-r{
     float:right;
 }
