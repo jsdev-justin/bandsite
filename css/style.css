@@ -68,6 +68,11 @@ h2{
     display:flex;
 }
 
+.flex-end{
+    justify-content: flex-end;
+    align-items:center;
+}
+
 .between{
     align-items:center;
     justify-content: space-between;
@@ -155,6 +160,14 @@ a:hover{
 
 .float-l{
     float:left;
+}
+
+
+table{
+    width:100vw;
+    text-align:center;
+    margin:0 auto;
+
 }
 
 
