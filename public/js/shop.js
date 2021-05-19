@@ -137,9 +137,11 @@ function createTotal(price){
     let totalDiv = document.createElement('div');
     totalDiv.className="flex flex-end";
     price = price
-    totalDiv.innerHTML = `<h3>Total:$<span class='total'>${price}</span></h3>`
+    totalDiv.innerHTML = `<button class='buybtn bg-green p-1 mr-15'>Buy</button><h3>Total:$<span class='total'>${price}</span></h3>`
 
     cartTotalRow.appendChild(totalDiv)
+
+    document.querySelector(".buybtn").onclick=checkOut;
 }
 
 
@@ -155,3 +157,43 @@ function adjustTotal(){
     totalDOM.innerHTML = cartTotal
 
 }
+
+
+
+function checkOut(){
+    stripeHandler.open();
+    // alert(total)
+}
+
+
+
+
+
+var stripeHandler = StripeCheckout.configure({
+    key:'pk_test_51IrW83H6Eled2mMIUg4IwXSTSfGnVTkuwsofM02nFiN45f69MZxvWADGkLip1J1bIB50NqRHQEZcZYd2oYYdB8fz00gomBWt2b',
+    locale:'en',
+    name:"Motley Crue Checkout",
+    image:"../assets/shout.jpeg",
+    token:function(token){
+
+        console.log(token);
+
+        fetch("/purchase",{
+            method:"POST",
+            headers:{
+                'Content-Type':"application/json",
+                "Accept":"application/json"
+            },
+            body:JSON.stringify({token:token.id,total:document.querySelector(".total").innerHTML})
+        })
+        .then(res=>res.json())
+        .then(res=>{
+            console.log(res)
+            if(res.msg.split(" ").indexOf("successful") !== -1){
+                alert("Congrats, your crue purchase went thru! 🤘")
+            }
+        })
+    }
+})
+
+

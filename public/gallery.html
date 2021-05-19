@@ -12,9 +12,10 @@
 </head>
 <body>
     <div class="hero text-center text-white bg-bleed">
-        <div class="navbar flex absolute between border-1">
+        <div class="navbar flex absolute evenly border-1">
             <a class="m-md" href="index.html"><h2>Home</h2></a>
             <a class="m-md" href="shop.html"><h2>Store</h2></a>
+            <a class="m-md" href="gallery.html"><h2>Gallery</h2></a>
             <a class="m-md" href="about.html"><h2>About</h2></a>
         </div>
 
@@ -23,11 +24,11 @@
     <img src="./assets/feelgoodpic.jpeg" alt="img" class='poster-img m-md'>
        
     </div>
-    <div class="container">
-        <h2 class="text-center">Töur  <span class='underline'>Dates</span></h2>
-        <div class="dates"></div>
-    </div>
 
+
+    <div class="container flex center">
+        <div class="gallery flex center"></div>
+    </div>
 
 
     <div class="footer flex between bg-bleed text-white">
@@ -41,9 +42,23 @@
         </ul>
 
     </div>
-    
 
-    <script src="dates.js"></script>
-    <script src="js/script.js"></script>
+
+    <script>
+        let images = ['./assets/bloodcover.jpeg','./assets/girls.jpeg','./assets/tattoo.jpeg','./assets/toofast.jpeg','./assets/theatre.jpeg']
+
+
+function flashGallery(){
+
+
+    document.querySelector(".gallery").innerHTML = `<img style=height:200px src=${images[Math.random() * images.length | 0]}>`
+
+
+    setTimeout(flashGallery,2000)
+}
+
+flashGallery()
+    </script>
+    
 </body>
 </html>

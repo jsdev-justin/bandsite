@@ -23,6 +23,10 @@ body{
     background:black;
 }
 
+.bg-green{
+    background:green;
+}
+
 .text-white{
     color:white
 }
@@ -83,12 +87,29 @@ h2{
     justify-content: space-evenly;
 }
 
+.center{
+    align-items:center;
+    justify-content: center;
+}
+
 .m-md{
     margin:5px 10px;
 }
 
 .ml-sm{
     margin-left:15px;
+}
+
+.mr-15{
+    margin-right:15px;
+}
+
+.w-100{
+    width:100px;
+}
+
+tr{
+    height:50px;
 }
 
 .p-1{
@@ -170,11 +191,25 @@ table{
 
 }
 
+/* .gallery{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    width:300px;
+    height:150px;
+    border:1px solid black;
+} */
+
 
 
 @media screen and (max-width:550px){
     .grid{
         display:grid;
         grid-template-columns:1fr;
+    }
+
+    .navbar h2{
+        font-size:15px;
+        /* color:blue; */
     }
 }
