@@ -9,7 +9,7 @@ function printDates(arr){
     let html = "";
 
     arr.forEach(a=>{
-        html += `<div class='card p-1 text-center'>
+        html += `<div data-description='${a.description}' class='card p-1 text-center'>
         <h3 class='p-1'>${a.album}</h3>
         <img src=${a.cover} class='album-img' alt=${a.album}>
         <h3 class='p-1'>$${a.price/100}</h3><button data-cover=${a.cover} data-album='${a.album}' data-price=${a.price/100} class='buy-btn bg-black text-white p-1'>Add to Cart</button>

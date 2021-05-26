@@ -158,6 +158,21 @@ a:hover{
 }
 
 
+[data-description]{
+    position:relative;
+}
+
+[data-description]:hover::after{
+    content:attr(data-description);
+    top:50px;
+    background:red;
+    color:white;
+    text-shadow:1px 1px 1px black;
+    position:absolute;
+    border-radius:10%;
+}
+
+
 .about-img{
     border-radius:50%;
     margin:10px;
